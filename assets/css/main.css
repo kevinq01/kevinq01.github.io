@@ -1,128 +1,103 @@
+html{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #010108 !important;
+  color: white;
+}
+
+.inicio {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 50%;
+}
+.content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.btn_home {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #7636FB;;
+  color: rgb(26, 26, 26);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.btn_home:hover {
+  background-color: #5020b9;;
+  color: black;
+}
+.image-container img {
+  width: 400px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
 .navmenu a {
   color: #000;
   transition: color 0.3s ease-in-out;
 }
 
 .navmenu a.active {
-  color: #ff5733; /* Color cuando está activo */
+  color: #7636FB; /* Color cuando está activo */
   font-weight: bold;
 }
-
-/* Estilos para el Hero y el Carrusel */
-.carrusel {
+.section {
   position: relative;
+  padding: 80px 20px;
+}
+
+/* Estrellas en toda la página */
+.stars {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;  /* Se mantiene en toda la pantalla */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Se va al fondo */
+  pointer-events: none; /* No interfiere con clics ni selección */
   overflow: hidden;
 }
 
-.carrusel .carousel-inner {
-  height: 100vh;
-}
-
-.carrusel .carousel-item {
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-.carrusel .carousel-caption {
+/* Generación de estrellas */
+.star {
   position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  text-align: center;
-}
-
-.carrusel h2 {
-  font-size: 3rem;
-  color: #6610f2;
-}
-
-.carrusel p {
-  font-size: 1.2rem;
-  color: #6610f2;
-}
-
-.carrusel .btn-get-started {
-  padding: 10px 25px;
-  background-color: #ff5733;
-  color: white;
-  border-radius: 30px;
-}
-
-.carrusel .btn-get-started:hover {
-  background-color: #e14d26;
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  background-color: #000;
+  width: 2px;
+  height: 2px;
+  background: white;
   border-radius: 50%;
+  opacity: 0.8;
+  animation: blink 3s infinite alternate ease-in-out;
 }
 
-.carousel-indicators li {
-  background-color: #fff;
-  width: 10px;
-  height: 10px;
-}
-.carousel-indicators .active {
-  background-color: #ff5733;
-}
-
-
-/* Agregar espacio para que las secciones no queden ocultas debajo del header */
-section {
-  padding: 100px 20px;
-  min-height: 100vh;
-}
-
-:root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Nunito",  sans-serif;
-}
-
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #111111; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #1bbd36; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #444444;  /* The default color of the main navmenu links */
-  --nav-hover-color: #1bbd36; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #1bbd36; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
-.light-background {
-  --background-color: #f7f7f7;
-  --surface-color: #ffffff;
-}
-
-.dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #252525;
-  --contrast-color: #ffffff;
-}
-
-.accent-background {
-  --background-color: #1bbd36;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --accent-color: #ffffff;
-  --surface-color: #2ae149;
-  --contrast-color: #ffffff;
+/* Parpadeo de estrellas */
+@keyframes blink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 /* Smooth scroll */
@@ -133,12 +108,6 @@ section {
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
-}
-
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -216,8 +185,9 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: white;
+  background-color: none;
+  /* rgba(116, 54, 250, 0.7) */
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -281,9 +251,7 @@ h6 {
     padding: 0 15px 0 0;
   }
 
-  .header .navmenu {
-    order: 3;
-  }
+ 
 }
 
 /*--------------------------------------------------------------
@@ -528,8 +496,8 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: black;
+  background-color: white;
   font-size: 14px;
   position: relative;
 }
@@ -801,14 +769,6 @@ h6 {
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
-section,
-.section {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 60px 0;
-  scroll-margin-top: 100px;
-  overflow: clip;
-}
 
 @media (max-width: 1199px) {
 
