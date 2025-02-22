@@ -2,25 +2,33 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".navmenu a");
 
-  // Agregar evento de clic a cada enlace
+  // Evento para cambiar la clase activa al hacer clic
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
-      e.preventDefault(); // Evita el salto brusco
+      e.preventDefault();
 
-      const targetId = this.getAttribute("href").substring(1); // Quita el #
+      // Remueve la clase active de todos los enlaces
+      navLinks.forEach((nav) => nav.classList.remove("active"));
+
+      // Agrega la clase active al enlace clickeado
+      this.classList.add("active");
+
+      // Navegar a la sección con desplazamiento suave
+      const targetId = this.getAttribute("href").substring(1);
       const targetSection = document.getElementById(targetId);
 
       if (targetSection) {
         window.scrollTo({
-          top: targetSection.offsetTop - 80, // Ajuste según la altura del menú
+          top: targetSection.offsetTop - 80,
           behavior: "smooth",
         });
       }
     });
   });
 
+  // Detectar la sección activa en el scroll
   function changeActiveSection() {
-    let scrollPosition = window.scrollY + 200; // Ajuste para activar antes
+    let scrollPosition = window.scrollY + 200;
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
@@ -39,8 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("scroll", changeActiveSection);
-  changeActiveSection(); // Activa la sección correcta al cargar la página
+  changeActiveSection();
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
   const starContainer = document.createElement("div");
