@@ -40,7 +40,7 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #7636FB;;
+  background-color: #7636FB;
   color: rgb(26, 26, 26);
   font-weight: bold;
   text-decoration: none;
@@ -61,7 +61,7 @@ body {
 /* Estilos para la barra de navegación */
 
 
-/* Línea activa debajo del enlace seleccionado */
+/* Línea activa debajo del enlace seleccionado
 /* .navmenu ul li a.active::after {
   content: "";
   position: absolute;
@@ -141,12 +141,12 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: white;
-  background-color: none;
-  /* rgba(116, 54, 250, 0.7) */
+  background: #010108 !important;
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgb(255, 255, 255); /* Línea divisoria */
 }
 
 .header .logo {
